@@ -1,0 +1,152 @@
+/* body {
+    background: lightblue;
+    text-align: center;
+
+}
+
+.wrapper{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+img {
+    transform: translateX(-200px);
+}
+
+.circle{
+    width: 100px;
+    padding: 50px 0;
+    line-height: 0;
+    margin: 60px auto;
+    background: pink;
+    color: white;
+    border-radius: 50px;
+    cursor:pointer;
+    transition: background 1s, transform 0.3s 1s ease-in;
+
+}
+
+.circle:hover{
+    background: salmon;
+    transform: rotate(360deg);
+} */
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grass, .sky, .road {
+    position: relative;
+}
+
+.sky{
+    height: 40%;
+    background: skyblue;
+    animation: night 30s ease;
+}
+
+.sun {
+    position: fixed;
+    width: 125px;
+    top: 25px;
+    left: 25px;
+    animation: sunDisappear 30s ease; 
+}
+
+.grass{
+    height:30%;
+    background:seagreen;
+}
+
+.road{
+    height:30%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+}
+
+.lines{
+    box-sizing: border-box;
+    border: 5px dashed #fff;
+    height:0px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+}
+
+/* animate*/
+
+.mario{
+    position: absolute;
+    top: -40px;
+    left:0px;
+    width: 10%;
+    animation: drive 3s both infinite linear, jump 0.3s 1.2s ease;
+}
+
+.luigi{
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 10%;
+    animation-name: drive;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    /* animation-direction: reverse; */
+
+}
+
+.cloud{
+    position: absolute;
+}
+
+.cloud:nth-child(1) {
+    width: 200px;
+    top: 120px;
+    opacity: 0.5;
+    animation: wind 45s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+    width: 300px;
+    top: 0;
+    animation: wind 35s linear infinite reverse;
+
+}
+
+
+/* keyframes */
+
+@keyframes drive{
+    from{ transform: translateX(-100px) }
+    to{ transform: translateX(1200px) }
+}
+@keyframes wind{
+    from{left: -300px}
+    to{ left: 100%}
+}
+
+@keyframes jump{
+    0%{ top: -40px }
+    50%{ top: -100px }
+    100% { top: -40px}
+}
+
+@keyframes night{
+    0%{ background: skyblue }
+    50%{ background: darkblue}
+    100%{background: skyblue}
+}
+
+@keyframes sunDisappear{
+    0%{ opacity: 1}
+    50%{ opacity: 0}
+    100%{ opacity: 1}
+}
